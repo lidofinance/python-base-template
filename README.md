@@ -9,3 +9,7 @@
 ## General
 
 This is pure python 3 template for new projects on github
+
+
+## Secrets
+Add CODECOV_TOKEN to github secrets
