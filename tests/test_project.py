@@ -1,3 +1,3 @@
 
 def test_function():
-    """Test"""
+    """Your project tests"""

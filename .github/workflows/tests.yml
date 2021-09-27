@@ -1,13 +1,6 @@
 name: Tests and coverage check
 
-on:
-  push:
-    branches:
-      - master
-
-  pull_request:
-    branches:
-      - master
+on: [push]
 
 jobs:
   build:
