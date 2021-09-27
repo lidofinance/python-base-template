@@ -1,11 +1,7 @@
-name: Tests and coverage check
+name: Coverage upload
 
 on:
   push:
-    branches:
-      - master
-
-  pull_request:
     branches:
       - master
 
@@ -29,4 +25,10 @@ jobs:
 
     - name: Test with pytest
       run: |
-        poetry run pytest .
+        poetry run pytest . --cov-config=.coveragerc --cov-report=xml --cov=lido
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage.xml
