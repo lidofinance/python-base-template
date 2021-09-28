@@ -13,10 +13,9 @@ This is pure python 3 template for new projects and bots on github.
 > **DO NOT FORK** this is meant to be used from **[Use this template](https://github.com/lidofinance/python-base-template/generate)** feature.
 
 1. Click on **[Use this template](https://github.com/lidofinance/python-base-template/generate)**
-3. Give a name to your project  
+2. Give a name to your project  
    (e.g. `my_awesome_project` recommendation is to use all lowercase and underscores separation for repo names.)
-3. Wait until the first run of CI finishes  
-   (Github Actions will process the template and commit to your new repo)
+3. Rename `myproject` to `{your_project_name}`
 4. If you want [codecov](https://about.codecov.io/sign-up/) Reports 
   on the new repository `settings->secrets` add your `CODECOV_TOKEN` (get the tokens on respective websites)
 5. Then clone your new project and happy coding!
@@ -35,33 +34,25 @@ This is pure python 3 template for new projects and bots on github.
 <!--  DELETE THE LINES ABOVE THIS AND WRITE YOUR PROJECT README BELOW -->
 
 ---
-# <img src="https://docs.lido.fi/img/logo.svg" alt="Lido" width="46"/> project_name
+# <img src="https://docs.lido.fi/img/logo.svg" alt="Lido" width="46"/> myproject
 
 [![codecov](https://codecov.io/gh/lidofinance/python-base-template/branch/master/graph/badge.svg)](https://codecov.io/gh/lidofinance/lido-python-sdk)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/lidofinance/python-base-template/actions/workflows/main.yml/tests.svg)](https://github.com/author_name/project_urlname/actions/workflows/main.yml)
 
-project_description
-
-## Install it from PyPI
-
-```bash
-pip install project_name
-```
+Myproject description.
 
 ## Usage
 
 ```py
-from project_name import BaseClass
-from project_name import base_function
+from myproject import BaseClass
+from myproject import base_function
 
 BaseClass().base_method()
 base_function()
 ```
 
 ```bash
-$ python -m project_name
-#or
-$ project_name
+$ python -m myproject
 ```

@@ -20,4 +20,4 @@ jobs:
         
     - name: Analysing the code with pylint
       run: |
-        pylint tests project
+        pylint tests myproject
