@@ -39,7 +39,7 @@ This is pure python 3 template for new projects and bots on github.
 [![codecov](https://codecov.io/gh/lidofinance/python-base-template/branch/master/graph/badge.svg)](https://codecov.io/gh/lidofinance/lido-python-sdk)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/lidofinance/python-base-template/actions/workflows/main.yml/tests.svg)](https://github.com/author_name/project_urlname/actions/workflows/main.yml)
+[![CI](https://github.com/lidofinance/python-base-template/actions/workflows/main.yml/tests.svg)](https://github.com/lidofinance/python-base-template/actions/workflows/main.yml)
 
 Myproject description.
 
