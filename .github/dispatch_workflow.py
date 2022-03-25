@@ -24,9 +24,10 @@ def make_jwt_token(private_key):
 
 def get_installation_id(jwt_token):
 
-    return requests.get("https://api.github.com/app/installations", headers={"Authorization": f"Bearer {jwt_token}"},).json()[
-        0
-    ]["id"]
+    return requests.get(
+        "https://api.github.com/app/installations",
+        headers={"Authorization": f"Bearer {jwt_token}"},
+    ).json()[0]["id"]
 
 
 def prep_auth(jwt_token, installation_id):
@@ -47,7 +48,8 @@ def wait_for_job(repo, workflow_id, auth):
     start = time.time()
     while time.time() - start < JOB_WAIT_TIMEOUT:
         workflow_runs = requests.get(
-            f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_id}/runs?event=workflow_dispatch", headers=auth
+            f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_id}/runs?event=workflow_dispatch",
+            headers=auth,
         ).json()["workflow_runs"]
         if len(workflow_runs) > 0:
             last_run = workflow_runs[0]
@@ -68,16 +70,24 @@ def wait_for_job(repo, workflow_id, auth):
 def wait_for_job_finish(repo, job_id, auth):
     start = time.time()
     while time.time() - start < JOB_TIMEOUT:
-        run = requests.get(f"https://api.github.com/repos/{repo}/actions/runs/{job_id}", headers=auth).json()
+        run = requests.get(
+            f"https://api.github.com/repos/{repo}/actions/runs/{job_id}", headers=auth
+        ).json()
         if run["status"] == "completed":
             if run.get("conclusion") != "success":
-                print(f"Job {job_id} hadn't succceed ({run.get('conclusion')}). Aborting.")
+                print(
+                    f"Job {job_id} hadn't succceed ({run.get('conclusion')}). Aborting."
+                )
                 sys.exit(1)
-            print(f"The job {job_id} completed (conclusion={run['conclusion']}) in {time.time() - start} seconds.")
+            print(
+                f"The job {job_id} completed (conclusion={run['conclusion']}) in {time.time() - start} seconds."
+            )
             return
         time.sleep(1)
     else:
-        print(f"Timeout waiting for a job to complete. Last state for {run['id']}: {run['status']}")
+        print(
+            f"Timeout waiting for a job to complete. Last state for {run['id']}: {run['status']}"
+        )
         sys.exit(1)
 
 
@@ -101,7 +111,9 @@ def main():
         headers=auth,
         json={"ref": "master", "inputs": job_inputs},
     )
-    print(f"Dispatched workflow {target_workflow}. status={res.status_code}, text={res.text}")
+    print(
+        f"Dispatched workflow {target_workflow}. status={res.status_code}, text={res.text}"
+    )
     job = wait_for_job(repo, target_workflow, auth)
     wait_for_job_finish(repo, job, auth)
 
