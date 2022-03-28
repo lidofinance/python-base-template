@@ -25,7 +25,7 @@ This is pure python 3 template for new projects and bots on github.
 - 💬 Auto generation of change log using **gitchangelog** to keep a HISTORY.md file automatically based on your commit history on every release.
 - 🐋 A simple [Dockerfile](Dockerfile) to build a container image for your project.  
 - 🧪 Testing structure using [pytest](https://docs.pytest.org/en/latest/)
-- ✅ Code linting using [pylint](https://pylint.org/)
+- ✅ Code linting using [pylint](https://pylint.org/), [isort](https://pycqa.github.io/isort/) and [bandit](https://bandit.readthedocs.io/en/latest/) via [Lido generic workflow](https://github.com/lidofinance/linters)
 - 📊 Code coverage reports using [codecov](https://about.codecov.io/sign-up/)
 - 🎯 Entry points to execute your program using `python -m <project_name>`.
 - 🔄 Continuous integration using [Github Actions](.github/workflows/) with jobs to lint, test and release your project on Linux, Mac and Windows environments.
