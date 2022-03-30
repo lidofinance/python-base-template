@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 import jwt
-import time
 import requests
 import os
 import sys
 import time
+
 
 JOB_WAIT_TIMEOUT = 300  # timeout to wait for triggered job to be created (not finished)
 JOB_TIMEOUT = 6000  # timeout to wait fo job to finish
@@ -23,10 +23,10 @@ def make_jwt_token(private_key):
 
 
 def get_installation_id(jwt_token):
-
-    return requests.get("https://api.github.com/app/installations", headers={"Authorization": f"Bearer {jwt_token}"},).json()[
-        0
-    ]["id"]
+    return requests.get(
+        "https://api.github.com/app/installations",
+        headers={"Authorization": f"Bearer {jwt_token}"},
+    ).json()[0]["id"]
 
 
 def prep_auth(jwt_token, installation_id):
@@ -47,7 +47,8 @@ def wait_for_job(repo, workflow_id, auth):
     start = time.time()
     while time.time() - start < JOB_WAIT_TIMEOUT:
         workflow_runs = requests.get(
-            f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_id}/runs?event=workflow_dispatch", headers=auth
+            f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_id}/runs?event=workflow_dispatch",
+            headers=auth,
         ).json()["workflow_runs"]
         if len(workflow_runs) > 0:
             last_run = workflow_runs[0]
