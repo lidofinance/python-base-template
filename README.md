@@ -31,24 +31,28 @@ List of secrets that you should add to secrets
 
 - 💬 Auto generation of change log using **gitchangelog** to keep a HISTORY.md file automatically based on your commit history on every release.
 - 🐋 A simple [Dockerfile](Dockerfile) to build a container image for your project.  
-- 🧪 Testing structure using [pytest](https://docs.pytest.org/en/latest/)
-- ✅ Code linting using [pylint](https://pylint.org/)
-- 📊 Code coverage reports using [codecov](https://about.codecov.io/sign-up/)
-- 🎯 Entry points to execute your program using `python -m <project_name>`.
-- 🔄 Continuous integration using [Github Actions](.github/workflows/) with jobs to lint, test and release your project on Linux, Mac and Windows environments.
+- 🧪 Testing structure using [pytest](https://docs.pytest.org/en/latest/).
+- ✅ Code linting using [pylint](https://pylint.org/) and [mypy](https://mypy.readthedocs.io/en/stable/).
+- 🔄 Continuous integration using [Github Actions](.github/workflows/) with jobs to lint, tests.
 - 🌊 Tracking and logging via [Prometheus](https://prometheus.io/).
+- 🧙‍ To sort dependencies [isort](https://pycqa.github.io/isort/).
+- 🛑 Check everything before push [pre-commit](https://pre-commit.com/).
 
 <!--  DELETE THE LINES ABOVE THIS AND WRITE YOUR PROJECT README BELOW -->
 
 ---
-# <img src="https://docs.lido.fi/img/logo.svg" alt="Lido" width="46"/> myproject
+# <img src="https://docs.lido.fi/img/logo.svg" alt="Lido" width="46"/> My Project
 
-[![codecov](https://codecov.io/gh/lidofinance/python-base-template/branch/master/graph/badge.svg)](https://codecov.io/gh/lidofinance/lido-python-sdk)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/lidofinance/python-base-template/actions/workflows/main.yml/tests.svg)](https://github.com/lidofinance/python-base-template/actions/workflows/main.yml)
 
-Myproject description.
+Myproject is a base template for all python project with preinstalled packages that are common for Lido's code base.
+
+## How to install
+
+1. `poetry install` - to install dep
+2. `pre-commit install` - to install pre-commit hooks
 
 ## Usage
 
