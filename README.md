@@ -1,5 +1,6 @@
 # <img src="https://docs.lido.fi/img/logo.svg" alt="Lido" width="46"/> Python template
 
+[![codecov](https://codecov.io/gh/lidofinance/python-base-template/branch/master/graph/badge.svg)](https://codecov.io/gh/lidofinance/lido-python-sdk)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Super-Linter](https://github.com/lidofinance/python-base-template/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
@@ -16,7 +17,9 @@ This is pure python 3 template for new projects and bots on GitHub.
 2. Give a name to your project  
    (e.g. `my_awesome_project` recommendation is to use all lowercase and underscores separation for repository names.)
 3. Rename `myproject` to `{your_project_name}`
-4. Then clone your new project and happy coding!
+4. If you want [codecov](https://about.codecov.io/sign-up/) Reports
+   on the new repository `settings->secrets` add your `CODECOV_TOKEN` (get the tokens on respective websites)
+5. Then clone your new project and happy coding!
 
 ### Secrets
 
@@ -32,6 +35,7 @@ List of secrets that you should add to secrets
 - 🔄 Continuous integration using [GitHub Actions](.github/workflows/) with jobs to lint, tests.
 - ✅ Code linting using [pylint](https://pylint.org/), [isort](https://pycqa.github.io/isort/), [mypy](https://mypy.readthedocs.io/en/stable/) and [bandit](https://bandit.readthedocs.io/en/latest/) via [Lido generic workflow](https://github.com/lidofinance/linters)
 - 🌊 Tracking and logging via [Prometheus](https://prometheus.io/).
+- 📊 Code coverage reports using [codecov](https://about.codecov.io/sign-up/)
 - 🧙‍ To sort dependencies [isort](https://pycqa.github.io/isort/).
 - 🛑 Check everything before push [pre-commit](https://pre-commit.com/).
 - 🦸 Lint everything with [super-linter](https://github.com/github/super-linter).
@@ -49,8 +53,8 @@ Myproject is a base template for all python project with preinstalled packages t
 
 ## How to install
 
-1. `$ poetry install` - to install dep
-2. `$ pre-commit install` - to install pre-commit hooks
+1. `poetry install` - to install dep
+2. `pre-commit install` - to install pre-commit hooks
 
 ## Usage
 
