@@ -29,8 +29,8 @@ List of secrets that you should add to secrets
 
 - 🐋 A simple [Dockerfile](Dockerfile) to build a container image for your project.  
 - 🧪 Testing structure using [pytest](https://docs.pytest.org/en/latest/).
-- ✅ Code linting using [pylint](https://pylint.org/) and [mypy](https://mypy.readthedocs.io/en/stable/).
 - 🔄 Continuous integration using [GitHub Actions](.github/workflows/) with jobs to lint, tests.
+- ✅ Code linting using [pylint](https://pylint.org/), [isort](https://pycqa.github.io/isort/), [mypy](https://mypy.readthedocs.io/en/stable/) and [bandit](https://bandit.readthedocs.io/en/latest/) via [Lido generic workflow](https://github.com/lidofinance/linters)
 - 🌊 Tracking and logging via [Prometheus](https://prometheus.io/).
 - 🧙‍ To sort dependencies [isort](https://pycqa.github.io/isort/).
 - 🛑 Check everything before push [pre-commit](https://pre-commit.com/).
