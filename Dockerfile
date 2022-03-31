@@ -24,7 +24,7 @@ COPY --from=builder /venv /venv
 COPY . .
 
 ENV PATH=$PATH:/app/venv/bin
-ENV PYTHONPATH="/venv/lib/python3.10/site-packages/"
+ENV PYTHONPATH="/venv/lib/python3.9/site-packages/"
 
 EXPOSE 9000
 USER www-data
