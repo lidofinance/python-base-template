@@ -6,7 +6,7 @@ authors = ["Raman <roman.s@p2p.org>"]
 license = "MIT License"
 
 [tool.poetry.dependencies]
-python = "3.10.4"
+python = "^3.9"
 prometheus-client = "0.13.1"
 
 [tool.poetry.dev-dependencies]
