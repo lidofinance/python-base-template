@@ -1,12 +1,12 @@
 FROM python:3.9-slim as base
 
-RUN apt-get update && apt-get install -y gcc libffi-dev g++ git curl
+RUN apt-get update && apt-get install -y --no-install-recommends gcc libffi-dev g++ git curl
 WORKDIR /app
 
 FROM base as builder
 
 ENV POETRY_VERSION=1.1.13
-RUN pip install poetry==$POETRY_VERSION
+RUN pip install --no-cache-dir poetry==$POETRY_VERSION
 
 COPY pyproject.toml poetry.lock ./
 RUN python -m venv --copies /venv

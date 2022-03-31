@@ -20,12 +20,19 @@ jobs:
 
       - name: Analysing the code with pylint
         run: |
-          poetry run pylint .
+          poetry run pylint myproject
 
       - name: Running issort
         run: |
-          poetry run isort .
+          poetry run isort myproject
 
       - name: Running mypy
         run: |
-          poetry run mypy .
+          poetry run mypy myproject
+
+      - name: Super-Linter
+        uses: github/super-linter@v4.8.5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

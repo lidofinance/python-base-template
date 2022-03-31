@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - For now removed features.
 
 ### Fixed
-- For any bug fixes.
+- For any bugfixes.
 
 ### Security
 - In case of vulnerabilities.

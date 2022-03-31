@@ -57,10 +57,12 @@ def wait_for_job(repo, workflow_id, auth):
                 return last_run["id"]
         time.sleep(1)
     else:
-        print(f"Timeout waiting for a job to appear.")
+        print("Timeout waiting for a job to appear.")
         if len(workflow_runs) > 0:
             print(
-                f"The latest job observed: {workflow_runs[0]['id']}, {workflow_runs[0]['name']}, {workflow_runs[0]['event']}, {workflow_runs[0]['status']}"
+                f"The latest job observed: {workflow_runs[0]['id']}, "
+                f"{workflow_runs[0]['name']}, {workflow_runs[0]['event']}, "
+                f"{workflow_runs[0]['status']}"
             )
 
         sys.exit(1)
