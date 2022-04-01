@@ -1,4 +1,6 @@
-### Before merging Pull Request to master do:
+# Todo list
 
 - [ ] Add tests for a new feature
 - [ ] Update README.md
+
+Review pls @F4ever
