@@ -1,6 +1,6 @@
 FROM python:3.9-slim as base
 
-RUN apt-get update && apt-get install -y --no-install-recommends gcc libffi-dev g++ git curl
+RUN apt-get update && apt-get install -y --no-install-recommends -qq gcc libffi-dev g++ git curl
 WORKDIR /app
 
 FROM base as builder
@@ -16,20 +16,23 @@ RUN . /venv/bin/activate && poetry install --no-dev --no-root
 
 FROM base as production
 
-RUN mkdir /var/www && chown www-data /var/www && \
-    apt-get clean && find /var/lib/apt/lists/ -type f -delete && \
-    chown www-data /app/
-
 COPY --from=builder /venv /venv
 COPY . .
 
-ENV PATH=$PATH:/app/venv/bin
+RUN mkdir -p /var/www && chown www-data /var/www && \
+    apt-get clean && find /var/lib/apt/lists/ -type f -delete && \
+    chown -R www-data /app/ && chown -R www-data /venv
+
 ENV PYTHONPATH="/venv/lib/python3.9/site-packages/"
+ENV PATH=$PATH:/venv/bin
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 EXPOSE 9000
 USER www-data
 
-HEALTHCHECK --interval=10s --timeout=3s CMD curl -f http://localhost:9000/healthcheck || exit 1
+HEALTHCHECK --interval=10s --timeout=3s \
+    CMD curl -f http://localhost:9000/healthcheck || exit 1
 
 ENTRYPOINT ["python3"]
 CMD ["-u", "myproject/main.py"]

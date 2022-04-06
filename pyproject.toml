@@ -4,6 +4,10 @@ version = "0.1.0"
 description = "Project description"
 authors = ["Raman <roman.s@p2p.org>"]
 license = "MIT License"
+readme = "README.md"
+include = [
+    "LICENSE",
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
