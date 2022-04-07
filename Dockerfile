@@ -27,12 +27,13 @@ ENV PYTHONPATH="/venv/lib/python3.9/site-packages/"
 ENV PATH=$PATH:/venv/bin
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV PULSE_SERVER_PORT 9010
 
 EXPOSE 9000
 USER www-data
 
 HEALTHCHECK --interval=10s --timeout=3s \
-    CMD curl -f http://localhost:9000/healthcheck || exit 1
+    CMD curl -f http://localhost:$PULSE_SERVER_PORT/healthcheck || exit 1
 
 ENTRYPOINT ["python3"]
 CMD ["-u", "myproject/main.py"]
