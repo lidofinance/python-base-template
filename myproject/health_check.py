@@ -3,7 +3,7 @@ import threading
 from datetime import datetime, timedelta
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-import requests
+import requests  # type: ignore
 
 SERVER_PORT = int(os.getenv("PULSE_SERVER_PORT", "9010"))
 
