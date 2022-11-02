@@ -6,6 +6,13 @@
 
 This is pure python 3 template for new projects and bots on GitHub.
 
+> 🚧 CI and deploy
+> 
+> After creating repo from the template make sure that you have correctly filled TARGET_WORKFLOW field in:
+> - .github/workflows/ci-dev.yml
+> - .github/workflows/ci-staging.yml
+> - .github/workflows/ci-prod.yml
+
 ### HOW TO USE THIS TEMPLATE
 
 > **DO NOT FORK** this is meant to be used from **[Use this template](https://github.com/lidofinance/python-base-template/generate)** feature.
