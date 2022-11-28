@@ -35,6 +35,9 @@ jobs:
       dirs: myproject tests # TODO don't forget rename this
   security:
     uses: lidofinance/linters/.github/workflows/security.yml@master
+    permissions:
+      security-events: write
+      contents: read
   docker:
     uses: lidofinance/linters/.github/workflows/docker.yml@master
   actions:
