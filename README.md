@@ -4,7 +4,7 @@
 
 ## General
 
-This is pure python 3 template for new projects and bots on GitHub.
+This is a pure python 3 template for new projects and bots on GitHub.
 
 > 🚧 CI and deploy
 > 
@@ -19,7 +19,7 @@ This is pure python 3 template for new projects and bots on GitHub.
 
 1. Click on **[Use this template](https://github.com/lidofinance/python-base-template/generate)**
 2. Give a name to your project  
-   (e.g. `my_awesome_project` recommendation is to use all lowercase and underscores separation for repository names.)
+   (e.g. `my_awesome_project` the recommendation is to use all lowercase and underscores separation for repository names.)
 3. Rename `myproject` to `{your_project_name}`
 5. Then clone your new project and happy coding!
 
@@ -45,7 +45,7 @@ List of secrets that you should add to secrets
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Myproject is a base template for all python project with preinstalled packages that are common for Lido's codebase.
+Myproject is a base template for all python project with pre-installed packages that are common for Lido's codebase.
 
 ## How to install
 
